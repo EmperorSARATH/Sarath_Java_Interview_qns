@@ -1,0 +1,172 @@
+1)What is difference in Overloading and Over riding
+Method Overloading:-
+1)	Method overloading is used to increase the readability of the program.
+2)	Method overloading is performed within class.	
+3)	In case of method overloading, parameter must be different.	
+4)	Method overloading is the example of compile time polymorphism.	
+5)	In java, method overloading can't be performed by changing return type of the method only. Return type can be same or different in method overloading. But you must have to change the parameter.	
+
+
+Method Overriding:-
+	Method overriding is used to provide the specific implementation of the method that is already provided by its super class.
+Method overriding occurs in two classes that have IS-A (inheritance) relationship.
+In case of method overriding, parameter must be same.
+Method overriding is the example of run time polymorphism.
+Return type must be same or covariant in method overriding.
+
+2)If both the functions are statis can we over ride?
+  The answer is ‘Yes’. We can have two or more static methods with the same name, but differences in input parameters.
+
+
+3)Diffference between Final , Finally and Finalize
+
+  FINAL:-
+
+  Final is a "Keyword" and "access modifier" in Java.	
+ Final is a keyword applicable to classes, variables and methods.		
+ (1) Final variable becomes constant, and it can't be reassigned.
+ (2) A final method can't be overridden by the child class.
+ (3) Final Class can not be extended.
+ Final method is executed upon its call.	
+	
+ FINALLY:-
+ Finally is a "block" in Java.	
+ Finally is a block that is always associated with try and catch block.
+ A "finally" block, clean up the resources used in "try" block.	
+ "Finally" block executes just after the execution of"try-catch" block.
+
+
+FINALIZE:-
+Finalize is a "method" in Java.
+finalize() is a method applicable to objects.
+Finalize method performs cleans up activities related to the object before its destruction.
+finalize() method executes just before the destruction of the object.
+
+4)What are maker Interfaces?
+
+ An interface that does not contain methods, fields, and constants is known as marker interface.
+ In other words, an empty interface is known as marker interface or tag interface.
+ It delivers the run-time type information about an object.
+ It is the reason that the JVM and compiler have additional information about an object. 
+
+
+5)a singleton class is a class that can have only one object (an instance of the class) at a time. After first time, if we try to instantiate the Singleton class, 
+ the new variable also points to the first instance created.
+
+
+6.Both ArrayList and LinkedList are two different 
+ implementations of the List interface. ArrayList 
+ is a resizable-array implementation, whereas LinkedList 
+ is a Doubly-linked list implementation of the List 
+ interface.
+
+7.a hash collision is a random match in hash values 
+  that occurs when a hashing algorithm produces the 
+  same hash value for two distinct pieces of data.
+
+8.A lambda expression is a short block of code which 
+  takes in parameters and returns a value. Lambda
+  expressions are similar to methods, but they do 
+  not need a name and they can be implemented right 
+  in the body of a method.
+
+9.A functional interface is an interface that contains
+ only one abstract method. They can have only one
+ functionality to exhibit. From Java 8 onwards, 
+ lambda expressions can be used to represent the 
+ instance of a functional interface.
+
+ A functional interface can have any number of default methods. 
+ Runnable, ActionListener, Comparable are some of 
+ the examples of functional interfaces.
+
+10.Optional is a container object used to contain 
+   not-null objects. Optional object is used to represent 
+   null with absent value. This class has various utility 
+   methods to facilitate code to handle values as 
+  ‘available’ or ‘not available’ instead of checking 
+   null values 
+
+11. What is factory design pattern and Adapter and difference between them?
+Factory pattern: - It is one of the most used design patterns in Java. This type of design pattern comes under 
+creational pattern as this pattern provides one of the best ways to create an object. In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+
+Adapter pattern: - It works as a bridge between two incompatible interfaces.
+ This pattern involves a single class which is responsible to join functionalities of independent or incompatible interfaces.
+
+The main difference between factory pattern and abstract factory pattern is that the factory pattern provides a method of creating objects without specifying the exact class used to create it while the abstract factory pattern provides a method to combine a group of individual factories without specifying their concrete classes.
+
+12. What are Solid principles
+These principles establish practices that lend to developing software with considerations for maintaining and extending as the project grows.
+SOLID stands for:
+S - Single-responsibility Principle
+O - Open-closed Principle
+L - Liskov Substitution Principle
+I - Interface Segregation Principle
+D - Dependency Inversion Principle
+
+13. What does @component and @scan do in Sprinboot annotation?
+@Component is an annotation that allows Spring to automatically detect our custom beans. Spring will: 
+Scan our application for classes annotated with @Component. Instantiate them and inject any specified dependencies into them.
+Spring provides a mechanism to identify Spring bean candidates explicitly through the @ComponentScan annotation. 
+If the application is a Spring Boot application, then all the packages under the package containing the Spring Boot application class will be covered by an implicit component scan.
+
+14. What is the Difference between JPA, Hibernate and ORM?
+ORM is the approach of taking object-oriented data and mapping to a relational data store (e.g., tables in a RDBMS)
+JPA is the Java EE standard specification for ORM in Java EE.
+Hibernate is another implementation of the JPA specification, in that you can use the standard JPA APIs and configure your 
+application to use Hibernate as the provider of the spec under the covers.
+Hibernate also provides a superset of the ORM features beyond what is specified in the JPA spec. 
+Meaning, that while it provides an implementation of the JPA API, it also provides more features beyond what JPA specifies.
+
+15) What is indexing in Database?
+Indexing is a way to optimize the performance of a database by minimizing the number of disk accesses 
+required when a query is processed. It is a data structure technique which is used to quickly locate and access the data in a database.
+
+16.What are 4 types of Drivers in Jdbc ?
+-> There are 4 types of JDBC drivers:
+a) JDBC-ODBC bridge driver
+b) Native-API driver (partially java driver)
+c) Network Protocol driver (fully java driver)
+d) Thin driver (fully java driver)
+
+17.What is difrence bew @component and @bean and @service ?
+-> @Bean
+@Bean works in conjunction with a configuration class (with @Configuration) and thus in the annotation based configuration.
+It also is used on the methods inside of such a configuration class. Telling Spring to add whatever the method returns to the Spring Context. 
+It’s done explicitly.By default, it will use the name of the method as the bean id/name. An alternative, you can specify it in the @Bean annotation.
+
+->@Component
+@Component is used on our classes, so Spring knows that it should add it. However, it only works, if we enabled a component scan for our application and our class is included.
+With a component scan, Spring will scan the entire classpath and will add all @Component annotated classes to the Spring Context (with adjustable Filtering).
+
+->@Service
+We mark beans with @Service to indicate that they're holding the business logic. 
+Besides being used in the service layer, there isn't any other special use for this annotation.
+
+
+18) What is difference bew SOAP and restful services techinically ?
+->SOAP vs. REST
+
+Many legacy systems may still adhere to SOAP, while REST came later and is often viewed as a faster alternative in web-based scenarios. 
+REST is a set of guidelines that offers flexible implementation, whereas SOAP is a protocol with specific requirements like XML messaging.
+REST APIs are lightweight, making them ideal for newer contexts like the Internet of Things (IoT), mobile application development, and serverless computing. 
+SOAP web services offer built-in security and transaction compliance that align with many enterprise needs, but that also makes them heavier. Additionally, many public APIs, like the Google Maps API, follow the REST guidelines
+
+19) Difference in POST and PUT?
+->		PUT																		POST
+This method is idempotent.															This method is not idempotent.
+PUT method is call when you have to modify a single resource, which is already a part of resource collection.		POST method is call when you have to add a child resource under resources collection.
+RFC-2616 depicts that the PUT method sends a request for an enclosed entity stored in the supplied request URI.		This method requests the server to accept the entity which is enclosed in the request.
+PUT method syntax is PUT /questions/{question-id}										POST method syntax is POST /questions
+PUT method answer can be cached.												You cannot cache PUT method responses.
+PUT /vi/juice/orders/1234 indicates that you are updating a resource which is identified by “1234”.			POST /vi/juice/orders indicates that you are creating a new resource and return an identifier to describe the resource.
+If you send the same request multiple times, the result will remain the same.						If you send the same POST request more than one time, you will receive different results.
+PUT works as specific.														POST work as abstract.
+We use UPDATE query in PUT.													We use create query in POST.
+In PUT method, the client decides which URI resource should have.								In POST method, the server decides which URI resource should have.
+
+
+20).IS react uni directional or Bi directional ?
+->React doesn't support bi-directional. therefore React,uses unidirectional data flow.
+
